@@ -10,16 +10,17 @@ by Loukoum82
 $.jgrid.extend({
  toCSV : function(callback,onePage) {
   if ($(this).getGridParam("lastpage")>1 && !onePage) {
-   var msg = "Il semble y avoir plusieurs pages de résultats dans votre tableau. Voulez-vous imprimer uniquement la page en cours?";
+   /* Change text to your own language */
+   var msg = "It seems to be a multi pages grid. Would you like to export this page only?";
    var gridcsv = this;
    var cbgrid = callback;
-   if (jAnyQuestion) // plugin jquery.alerts.js needed + improvement
+   if (jAnyQuestion) // plugin jquery.alerts.js needed (https://github.com/loukoum82/jquery.alerts)
     jAnyQuestion (msg, "Multi-pages", function(r){
      switch(r) {
       case 0 : $(gridcsv).toCSV(cbgrid,true); break;
       case 1 : $(gridcsv).toCSVLoader(cbgrid); break;
      }
-    },['Oui','Toutes les pages','Annuler']);
+    },['Yes','All pages','Cancel']);
    else
     $(this).toCSVLoader(callback);
    return "";
