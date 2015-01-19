@@ -1,4 +1,4 @@
-/* jquery.jqGrid.xls.js  Version 1.0.0.0
+/* jquery.jqGrid.csv.js  Version 1.0.0.0
 
 Export a jqGrid in a CSV doc (can be opened with MS Excel, Libre Office Calc)
 
